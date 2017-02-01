@@ -21,10 +21,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     {XXXXXXX,     XXXXXXX, KC_LALT, LT(FUNC, KC_TAB), CTL_T(KC_ESC), CTL_T(KC_ENT), MO(NUMS), KC_BSPC, KC_TAB, XXXXXXX, XXXXXXX}
   },
   [NUMS] = {
-    {KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_PERC, XXXXXXX, KC_ASTR, KC_7, KC_8,    KC_9,    KC_PIPE},
-    {KC_CIRC, KC_DLR,  KC_EQL,  KC_UNDS, KC_MINS, XXXXXXX, KC_PLUS, KC_4, KC_5,    KC_6,    KC_QUOT},
-    {KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_HASH, _______, KC_AMPR, KC_1, KC_2,    KC_3,    KC_DQT},
-    {KC_GRV,  KC_TILD, KC_LALT, _______, _______, KC_ENT,  _______, KC_0, XXXXXXX, XXXXXXX, KC_BSLS}
+    {KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_PERC, XXXXXXX, KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PIPE},
+    {KC_CIRC, KC_DLR,  KC_EQL,  KC_UNDS, KC_AMPR, XXXXXXX, KC_QUOT, KC_4,    KC_5,    KC_6,    KC_MINS},
+    {KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_HASH, _______, KC_DQT,  KC_1,    KC_2,    KC_3,    KC_PLUS},
+    {KC_GRV,  KC_TILD, KC_LALT, _______, _______, KC_ENT,  _______, KC_BSLS, XXXXXXX, XXXXXXX, KC_0}
   },
   [FUNC] = {
     {KC_DEL,       KC_AT,   KC_UP,        LGUI(KC_SPC), KC_VOLU, XXXXXXX, XXXXXXX, KC_F7,   KC_F8,   KC_F9,   KC_F10},
