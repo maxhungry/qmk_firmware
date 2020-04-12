@@ -43,9 +43,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |   `  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  | Del  |
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |  [   |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Ct/Es|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  "   |
+ * | Ct/Es|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |   ;  |  ]   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -54,8 +54,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_preonic_grid( \
   KC_GRV,        KC_1,    KC_2,    KC_3,             KC_4,          KC_5,           KC_6,           KC_7,           KC_8,             KC_9,    KC_0,    KC_DEL,  \
-  KC_TAB,        KC_Q,    KC_W,    KC_E,             KC_R,          KC_T,           KC_Y,           KC_U,           KC_I,             KC_O,    KC_P,    KC_BSPC, \
-  CTL_T(KC_ESC), KC_A,    KC_S,    KC_D,             KC_F,          KC_G,           KC_H,           KC_J,           KC_K,             KC_L,    KC_SCLN, KC_QUOT, \
+  KC_TAB,        KC_Q,    KC_W,    KC_E,             KC_R,          KC_T,           KC_Y,           KC_U,           KC_I,             KC_O,    KC_P,    KC_LBRC, \
+  CTL_T(KC_ESC), KC_A,    KC_S,    KC_D,             KC_F,          KC_G,           KC_H,           KC_J,           KC_K,             KC_L,    KC_SCLN, KC_RBRC, \
   KC_LSFT,       KC_Z,    KC_X,    KC_C,             KC_V,          KC_B,           KC_N,           KC_M,           KC_COMM,          KC_DOT,  KC_SLSH, KC_ENT,  \
   BACKLIT,       KC_LCTL, KC_LALT, LT_LOWER(KC_ESC), CTL_T(KC_ESC), LGUI_T(KC_SPC), LGUI_T(KC_SPC), SFT_T(KC_BSPC), LT_RAISE(KC_ENT), KC_DOWN, KC_UP,   KC_RGHT  \
 ),
@@ -70,17 +70,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      | L-TAB| R-TAB|      | TMUX | PLAY |      |      |      | HOME | END  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | PREV | NEXT |      |      |             |      | Next | Vol- | Vol+ | Play |
+ * |      | PREV | NEXT |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid( \
-  _______, _______,      _______,      _______, _______,      _______, _______, _______, _______, _______, _______, _______, \
-  _______, LGUI(KC_GRV), LGUI(KC_TAB), KC_UP,   LGUI(KC_SPC), KC_VOLU, _______, _______, _______, _______, _______, _______, \
-  _______, _______,      KC_LEFT,      KC_DOWN, KC_RIGHT,     KC_VOLD, _______, _______, _______, _______, _______, _______, \
-  _______, KM_LTAB,      KM_RTAB,      _______, LCTL(KC_SPC), KC_MPLY, _______, _______, _______, KC_HOME, KC_END,  _______, \
+  _______, _______,      _______,      _______, _______,      _______, _______, KC_F10,  KC_F11,  KC_F12,  _______, _______, \
+  _______, LGUI(KC_GRV), LGUI(KC_TAB), KC_UP,   LGUI(KC_SPC), KC_VOLU, _______, KC_F7,   KC_F8,   KC_F9,   _______, _______, \
+  _______, _______,      KC_LEFT,      KC_DOWN, KC_RIGHT,     KC_VOLD, _______, KC_F4,   KC_F5,   KC_F6,   _______, _______, \
+  _______, KM_LTAB,      KM_RTAB,      _______, LCTL(KC_SPC), KC_MPLY, _______, KC_F1,   KC_F2,   KC_F3,   KC_END,  _______, \
   _______, KC_MPRV,      KC_MNXT,      _______, _______,      _______, _______, _______, _______, _______, _______, _______  \
 ),
-
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
@@ -88,9 +87,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |   `  |   !  |   @  |   (  |   )  |   %  |   *  |   7  |   8  |   9  |   -  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |   {  |   }  |   =  |   _  |   "  |   &  |   4  |   5  |   6  |   +  |  \   |
+ * | Del  |   {  |   }  |   =  |   _  |   "  |   &  |   4  |   5  |   6  |   +  |  |   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |   ^  |   $  |   [  |   ]  |   '  |   #  |   1  |   2  |   3  |   0  |  |   |
+ * |      |   ^  |   $  |   [  |   ]  |   '  |   #  |   1  |   2  |   3  |   0  |  \   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |RAISE |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -99,9 +98,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_preonic_grid( \
   KC_GRV,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BSPC, \
   KC_GRV,  KC_EXLM, KC_AT,   KC_LPRN, KC_RPRN, KC_PERC, KC_ASTR, KC_7,    KC_8,    KC_9,    KC_MINS, KC_DEL,  \
-  KC_DEL,  KC_LCBR, KC_RCBR, KC_EQL,  KC_UNDS, KC_DQT,  KC_AMPR, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_BSLS, \
-  _______, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC, KC_QUOT, KC_HASH, KC_1,    KC_2,    KC_3,    KC_0,    KC_PIPE, \
-  _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
+  KC_DEL,  KC_LCBR, KC_RCBR, KC_EQL,  KC_UNDS, KC_DQT,  KC_AMPR, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_PIPE, \
+  _______, KC_CIRC, KC_DLR,  KC_LBRC, KC_RBRC, KC_QUOT, KC_HASH, KC_1,    KC_2,    KC_3,    KC_0,    KC_BSLS, \
+  _______, KC_GRV,  KC_TILD, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY  \
 ),
 
 /* Adjust (Lower + Raise)
